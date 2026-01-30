@@ -1,6 +1,6 @@
-Audio-Visual Affect Modelling (using the RAVDESS dataset)
+# Audio-Visual Affect Modelling (using the RAVDESS dataset)
 
-# Overview
+## Overview
 
 This project implements a baseline pipeline for facial-expression-based emotion classification from video, with a focus on evaluation methodology and generalization across individuals.
 
@@ -10,9 +10,13 @@ Using the RAVDESS dataset, facial landmarks are extracted from sampled video fra
 
 This allows direct investigation of within-person versus between-person generalization and the extent to which apparent performance may rely on identity-specific cues rather than emotion-related dynamics.
 
-# Key results
+## Landmark Extraction Example
 
-## Key Results
+Below is an example frame with detected facial landmarks overlaid. Each landmark corresponds to a 3D point used as input features for the classifier after temporal aggregation.
+
+![Landmark example](assets/frame_07_idx_087_mesh.jpg)
+
+## Key results
 
 Feature set | Random split | Actor-wise split | Drop
 ------------|--------------|------------------|------
@@ -20,7 +24,7 @@ All features (mean + std) | 0.819 | 0.600 | 0.219
 Mean-only features | 0.795 | 0.527 | 0.269
 Std-only features | 0.552 | 0.410 | 0.142
 
-# Interpretation
+## Interpretation
 
 Performance is substantially higher under random splitting than under actor-wise evaluation for all feature representations, indicating that identity-specific information contributes strongly to apparent predictive accuracy.
 
@@ -30,7 +34,7 @@ Using only landmark variability reduces overall accuracy but also reduces the ge
 
 Together, these results illustrate that naive evaluation strategies can substantially overestimate generalization performance and that disentangling person-specific baselines from expression-related dynamics is central for robust affect modelling.
 
-# Method Overview
+## Method Overview
 
 1. Frame Sampling
 
@@ -58,7 +62,7 @@ Feature ablations are performed using:
 	•	mean-only features
 	•	standard-deviation-only features
 
-# Repo structure
+## Repo structure
 
 src/
   extract_face_landmarks_tasks.py   # video → landmark features
@@ -70,7 +74,7 @@ data/
 
 models/       # downloaded MediaPipe model (not versioned)
 
-# Reproducibility
+## Reproducibility
 
 To reproduce the results:
 python src/extract_face_landmarks_tasks.py
@@ -78,11 +82,11 @@ python src/train_eval_landmarks.py
 
 (The RAVDESS dataset must be downloaded separately and placed in data/raw/.)
 
-# Notes and Limitations
+## Notes and Limitations
 	•	RAVDESS contains acted emotional speech recorded under controlled conditions; results may not transfer directly to naturalistic settings.
 	•	The goal of this project is not state-of-the-art emotion recognition performance but to demonstrate how evaluation strategy critically affects conclusions.
 	•	The pipeline serves as a baseline for future extensions such as temporal modelling, multimodal fusion, or within-person change analysis.
 
-# Motivation
+## Motivation
 
 This project was designed as a methodological exercise aligned with research on dynamic wellbeing and affect modelling. It demonstrates concretely how naive evaluation can inflate performance estimates and obscure the distinction between individual-specific patterns and general emotional dynamics.
