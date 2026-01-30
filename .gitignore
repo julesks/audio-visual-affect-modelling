@@ -1,6 +1,7 @@
 # Data (never commit)
 data/raw/
 data/processed/
+models/
 
 # Python
 .venv/
