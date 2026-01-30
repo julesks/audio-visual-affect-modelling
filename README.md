@@ -14,7 +14,7 @@ This allows direct investigation of within-person versus between-person generali
 
 Below is an example frame with detected facial landmarks overlaid. Each landmark corresponds to a 3D point used as input features for the classifier after temporal aggregation.
 
-![Landmark example](assets/frame_07_idx_087_mesh.jpg)
+![Landmark example](assets/frame_07_idx_087_points.jpg)
 
 ## Key results
 
