@@ -62,6 +62,28 @@ Feature ablations are performed using:
 	•	mean-only features
 	•	standard-deviation-only features
 
+## Dataset and Attribution
+
+This project uses the Ryerson Audio-Visual Database of Emotional Speech and Song (RAVDESS).
+
+RAVDESS contains recordings from 24 professional actors (12 female, 12 male) expressing emotions through speech and song across three modalities: audio-only, audio-video, and video-only. Emotions include calm, happy, sad, angry, fearful, surprised, and disgust, recorded at two intensity levels plus neutral.
+
+The dataset was developed by:
+Dr. Steven R. Livingstone (Affective Data Science Lab)
+Dr. Frank A. Russo (SMART Lab)
+
+RAVDESS is released under a Creative Commons Attribution license.
+
+Zenodo dataset link:
+https://zenodo.org/record/1188976
+
+Recommended academic citation:
+Livingstone, S. R., & Russo, F. A. (2018). The Ryerson Audio-Visual Database of Emotional Speech and Song (RAVDESS): A dynamic, multimodal set of facial and vocal expressions in North American English. PLoS ONE, 13(5), e0196391.
+https://doi.org/10.1371/journal.pone.0196391
+
+For an example overview of the dataset’s recordings, see:
+https://www.youtube.com/watch?v=Y7OQoNEu3dY
+
 ## Repo structure
 
 src/
